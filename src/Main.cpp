@@ -1,10 +1,9 @@
-#include <stdio.h>    
-#include <stdlib.h>  
+#include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include <vector>
-
 #include "MemoryPool.h"
 #include "Chrono.h"
 
@@ -23,12 +22,10 @@ public:
   int position() { return position_; };
   int tag() { return tag_; };
 
-
 private:
   int position_; // Position.
   int tag_; // Tag ID.
 };
-
 
 int main() {
   chrono::Chronometer chrono;
@@ -62,7 +59,6 @@ int main() {
   chrono.StopTime();
   std::cout << "Time: " << chrono.GetElapsedTime() << " sec." << std::endl;
 
-
 #ifdef _WIN32
   //For memory leak debug
   _CrtMemState stateNow, stateDiff;
@@ -77,5 +73,3 @@ int main() {
 #endif
   return 0;
 }
-
-

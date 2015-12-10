@@ -1,8 +1,8 @@
 #ifndef MEMORY_POOL_H_
 #define MEMORY_POOL_H_
 
-#include <stdio.h>    
-#include <stdlib.h>  
+#include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
 
@@ -48,7 +48,7 @@ template<typename type,
         current_chunk_index = 0;
 
         if (current_block_index == num_available_pos_for_chunks) {
-          //I need to realloc 
+          //I need to realloc
           data_pool.resize(num_available_pos_for_chunks + block_of_chunks_size);
           num_available_pos_for_chunks += block_of_chunks_size;
         }
@@ -124,7 +124,7 @@ template<typename type,
         current_chunk_index = 0;
 
         if (current_block_index == num_available_pos_for_chunks) {
-          //I need to realloc 
+          //I need to realloc
           type ** tmp;
           tmp = (type**)realloc(data_pool,
                                 (num_available_pos_for_chunks + block_of_chunks_size) * sizeof(type*));
@@ -169,4 +169,3 @@ template<typename type,
 #endif /* USE_CPLUSCPLUS_MEMORY_POOL_FOR_PARTS */
 
 #endif /* MEMORY_POOL_H_ */
-

@@ -1,7 +1,6 @@
 #ifndef CHRONO_H
 #define CHRONO_H
 
-
 #include <chrono>
 
 #ifdef _WIN32
