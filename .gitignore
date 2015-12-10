@@ -26,3 +26,16 @@
 *.exe
 *.out
 *.app
+
+MemoryPoolMVS/*/x64
+MemoryPoolMVS/x64/*
+MemoryPoolMVS/*/x64
+MemoryPoolMVS/x64/*
+MemoryPoolMVS/*/Debug
+MemoryPoolMVS/Debug/*
+MemoryPoolMVS/*/Release
+MemoryPoolMVS/Release/*
+MemoryPoolMVS/*/*.vcxproj.user
+MemoryPoolMVS/*/*.vcxproj.filters
+MemoryPoolMVS/*.sdf
+MemoryPoolMVS/*.opensdf
