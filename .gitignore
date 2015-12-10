@@ -35,7 +35,3 @@ MemoryPoolMVS/*/Debug
 MemoryPoolMVS/Debug/*
 MemoryPoolMVS/*/Release
 MemoryPoolMVS/Release/*
-MemoryPoolMVS/*/*.vcxproj.user
-MemoryPoolMVS/*/*.vcxproj.filters
-MemoryPoolMVS/*.sdf
-MemoryPoolMVS/*.opensdf

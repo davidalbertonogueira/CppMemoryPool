@@ -10,8 +10,9 @@
 #include <sys/time.h>
 #endif
 
+namespace chrono {
 //******** USAGE *********
-//Chronometer chrono; //Declare a Chronometer
+//chrono::Chronometer chrono; //Declare a Chronometer
 //chrono.GetTime(); //Start timer
 //{
 //  //do your code
@@ -41,5 +42,6 @@ protected:
   std::chrono::steady_clock::time_point clock_begin;
   std::chrono::steady_clock::duration time_span;
 };
+}
 
 #endif // CHRONO_H

@@ -31,7 +31,7 @@ private:
 
 
 int main() {
-  Chronometer chrono;
+  chrono::Chronometer chrono;
 
 #ifdef _WIN32
   //For memory leak debug
