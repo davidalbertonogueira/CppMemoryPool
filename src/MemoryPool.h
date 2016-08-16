@@ -10,14 +10,13 @@
 #define MEMORY_POOL_CHUNK_SIZE 1024
 #define MEMORY_POOL_BLOCK_SIZE 8
 
-#if USE_CPLUSCPLUS_MEMORY_POOL_FOR_PARTS 1
+#if USE_CPLUSCPLUS_MEMORY_POOL_FOR_PARTS == 1
 
 template<typename type,
   int CHUNK_SIZE = MEMORY_POOL_CHUNK_SIZE,
   int BLOCK_SIZE = MEMORY_POOL_BLOCK_SIZE> class MemPool {
   public:
     MemPool() :
-      data_pool(NULL),
       block_of_chunks_size(BLOCK_SIZE),
       chunk_size(CHUNK_SIZE),
       num_allocated_chunks(0),
@@ -65,7 +64,6 @@ template<typename type,
           num_allocated_chunks--;
           ::operator delete(data_pool[num_allocated_chunks]);
         }
-
         data_pool.clear();
         current_chunk_index = 0;
         current_block_index = 0;
@@ -112,7 +110,7 @@ template<typename type,
         current_chunk_index = 0;
         //Alloc new chunk
         if ((data_pool[current_block_index] =
-             (type*)malloc(chunk_size * sizeof(type))) == NULL) {
+          (type*)malloc(chunk_size * sizeof(type))) == NULL) {
           current_chunk_index = 0;
           return NULL;
         }
@@ -127,7 +125,7 @@ template<typename type,
           //I need to realloc
           type ** tmp;
           tmp = (type**)realloc(data_pool,
-                                (num_available_pos_for_chunks + block_of_chunks_size) * sizeof(type*));
+            (num_available_pos_for_chunks + block_of_chunks_size) * sizeof(type*));
           if (tmp == NULL)
             return NULL;
           data_pool = tmp;
@@ -135,7 +133,7 @@ template<typename type,
         }
         //Alloc new chunk
         if ((data_pool[current_block_index] =
-             (type*)malloc(chunk_size * sizeof(type))) == NULL) {
+          (type*)malloc(chunk_size * sizeof(type))) == NULL) {
           current_chunk_index = 0;
           return NULL;
         }
